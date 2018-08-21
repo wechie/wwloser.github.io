@@ -1,6 +1,6 @@
 #### 1.集合概览
 
-集合包括两大接口：Collection 和 `Map`。
+集合包括两大接口：Collections 和 Map。
 - `Collection`
   - `Set`
     - `HashSet`
