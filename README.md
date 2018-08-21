@@ -5,10 +5,10 @@
   - Set
     - HashSet
     - TreeSet
-    - `LinkedHashSet`
-  - `List`
-    - `ArrayList`
-    - `LinkedList`
+    - LinkedHashSet
+  - List
+    - ArrayList
+    - LinkedList
   - `Queue`
     - `PriorityQueue`
     - `Deque`
@@ -19,13 +19,13 @@
   - `HashMap`
   - `LinkedHashMap`
 集合中常用的四个接口：`Comparable, Comparator, Iterable, Iterator`。
-##### 1. `Comparable`
+1. `Comparable`
 ```java
 interface Comparable<E>{
 	public int compareTo(E obj);
 }
 ```
-##### 2. `Comparator`
+2. `Comparator`
 ```java
 interface Comparator<E>{
 	public int compare(E obj1, E obj2);
