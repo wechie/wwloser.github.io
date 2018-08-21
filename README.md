@@ -20,18 +20,22 @@
   - `LinkedHashMap`
 集合中常用的四个接口：`Comparable, Comparator, Iterable, Iterator`。
 1. `Comparable`
-```java
+
+```
 interface Comparable<E>{
 	public int compareTo(E obj);
 }
 ```
+
 2. `Comparator`
-```java
+
+```
 interface Comparator<E>{
 	public int compare(E obj1, E obj2);
     boolean equals(Object obj);
 }
 ```
+
 ##### 3. `Iterable`
 ```java
 interface Iterable<E>{
