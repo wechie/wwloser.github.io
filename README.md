@@ -47,15 +47,10 @@ interface Iterator<E>{
     public void remove(){};
 }
 ```
-
 `remove()` 方法可以删除 `next()` 方法返回的元素，但是不可以连续使用 `remove()` 方法。因为 `Iterator` 对象中有一个成员变量`current`保存 `next()` 方法的返回值，当调用 `remove()` 删除元素后，`current` 会被置为 `null`。所以不能连续调用 `remove()`。
-
 当使用 `Iterator` 迭代器访问 `Collection` 集合元素时，`Collection` 中的元素不能被改变，只能通过 `Iterator` 的 `remove` 方法删除上一次 `next` 方法返回的集合元素才可以；否则将会引发异常。
-
 `Iterator` 采用了快速失败（`fast-fail`）机制，一旦在迭代过程中检测到该集合已经被修改（增加或删除元素），程序立即引发 `ConcurrentModifactionException `异常，而不是显示修改后的结果，这样可以避免共享资源而引发的潜在问题。
-
 `Collection` 接口中定义的方法：也是 `Set` 的方法
-
 ```java
 public interface Collection<E> extends Iterable<E> {
     int size();
@@ -87,19 +82,12 @@ public interface Collection<E> extends Iterable<E> {
     int hashCode();  
 }
 ```
-
 `AbstractCollection`抽象类，它为除 `size()`和`iterator()`之外的其他方法提供了默认实现。
-
 #### `Set`
-
 方法见 `Collection` 方法
-
 ##### `HashSet` 
-
 `HashSet` 中的元素可以是 `null` 。
-
 `HashSet` 集合插入和删除元素的过程是：
-
 - 先调用元素的 `hashCode()`，计算出元素所在的槽号。
 - 然后在对应槽与链表中的每个结点使用 `equal()` 方法进行比较，判断是否相等。由于无须判断大小关系。所以不会使用到 `Comparable/Comparator` 接口。
 - 此外，`HashCode` 中的 `contains(Object),remove(Object)` 和 `Iterator` 中的 `remove()` 方法都是按照上述方法再对应槽中进行处理。不会遍历整个集合。
@@ -118,7 +106,6 @@ Sorted subSet(Object fromElement, Object toElement)：返回此 TreeSet 的子�
 Sorted headSet(Object toElement)：返回此TreeSet中小于toElement 的元素组成的子集。
 Sorted tailSet(Object fromElement)：返回此TreeSet中由大于或等于 fromElement 的元素组成的子集。
 ```
-
 `TreeSet` 采用红黑树的数据结构来存储集合元素。在对集合进行遍历时，每个值将按照排序后的顺序呈现。`TreeSet` 支持两种排序方法：自然排序和定制排序。默认情况下，`TreeSet` 采用自然排序。如果需要定制排序，需要在创建 `TreeSet` 对象时，添加 `Comparator` 对象作为参数。
 
 `TreeSet` 使用 `Comparable/Comparator` 来比较元素的大小，以及判断元素是否相等。`TreeSet` 中元素不可以为 `null`，因为 `null` 无法比较大小。
