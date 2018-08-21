@@ -1,7 +1,6 @@
 #### 1.集合概览
 
 集合包括两大接口：`Collection` 和 `Map`。
-
 - `Collection`
   - `Set`
     - `HashSet`
@@ -19,34 +18,26 @@
   - `TreeMap`
   - `HashMap`
   - `LinkedHashMap`
-
 集合中常用的四个接口：`Comparable, Comparator, Iterable, Iterator`。
-
 ##### 1. `Comparable`
-
 ```java
 interface Comparable<E>{
 	public int compareTo(E obj);
 }
 ```
-
 ##### 2. `Comparator`
-
 ```java
 interface Comparator<E>{
 	public int compare(E obj1, E obj2);
     boolean equals(Object obj);
 }
 ```
-
 ##### 3. `Iterable`
-
 ```java
 interface Iterable<E>{
     Iterator<E> iterator(){};
 }
 ```
-
 ##### 4. `Iterator`
 
 ```java
