@@ -1,10 +1,10 @@
 #### 1.集合概览
 
 集合包括两大接口：Collections 和 Map。
-- `Collection`
-  - `Set`
-    - `HashSet`
-    - `TreeSet`
+- Collection
+  - Set
+    - HashSet
+    - TreeSet
     - `LinkedHashSet`
   - `List`
     - `ArrayList`
